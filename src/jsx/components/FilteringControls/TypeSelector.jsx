@@ -23,7 +23,7 @@ export default class TypeSelector extends React.Component {
     render() {
         return (
             <div className="block">
-                <label>Filter by type</label>
+                <header>Filter by type</header>
                 <select onChange={ this.onChange } value={ this.props.annotationsFilter.getSelectedType() || "" }>
                     { this.renderOption("", "< All types >") }
                     { this.props.annotationsFilter.available_types.map(type =>

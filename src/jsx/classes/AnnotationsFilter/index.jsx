@@ -38,7 +38,17 @@ export default class AnnotationsFilter {
         }
         for (let type_map of result.values()) {
             for (let prop_type of type_map.keys()) {
-                type_map.set(prop_type, iterToArray(type_map.get(prop_type)));
+                let values = iterToArray(type_map.get(prop_type));
+                values.sort((a, b) => {
+                    if (a === null) {
+                        return 1;
+                    }
+                    if (b === null) {
+                        return -1;
+                    }
+                    return a > b ? 1 : a < b ? -1 : 0;
+                });
+                type_map.set(prop_type, values);
             }
         }
         this._props_index = result;
@@ -95,16 +105,7 @@ export default class AnnotationsFilter {
             throw new InternalError("Attempt to get properties with no type being set.");
         }
         if (typeof this.__available_properties === "undefined") {
-            let result = iterToArray(this._props_index.get(this._type).keys());
-            // result.sort((a, b) => {
-            //     if (a === null) {
-            //         return -1;
-            //     }
-            //     if (b === null) {
-            //         return 1;
-            //     }
-            //     return a - b;
-            // });
+            const result = iterToArray(this._props_index.get(this._type).keys());
             this.__properties = result;
         }
         return this.__properties;
@@ -116,8 +117,25 @@ export default class AnnotationsFilter {
 
     setProperty(prop) {
         this._property = prop;
-        this._disabled_values = new Set();
+        this._disabled_values = new Set([null]);
         this._makeColorIndex();
+        this._callback();
+    }
+
+    getFilteringValues() {
+        return this._props_index.get(this._type).get(this._property).map(value => ({
+            value: value,
+            enabled: !this._disabled_values.has(value),
+        }));
+    }
+
+    enableValue(value) {
+        this._disabled_values.delete(value);
+        this._callback();
+    }
+
+    disableValue(value) {
+        this._disabled_values.add(value);
         this._callback();
     }
 

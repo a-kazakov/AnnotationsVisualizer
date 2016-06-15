@@ -26,7 +26,7 @@ export default class PropertySelector extends React.Component {
         }
         return (
             <div className="block">
-                <label>Group annotations</label>
+                <header>Group annotations</header>
                 <select onChange={ this.onChange } value={ this.props.annotationsFilter.getSelectedProperty() || "" }>
                     { this.renderOption("", "< No groupping >") }
                     { this.props.annotationsFilter.available_properties.map(prop =>
