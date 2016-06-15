@@ -1,16 +1,17 @@
 import React from "react";
 
-import TypesSelector from "./TypesSelector";
+import TypeSelector from "./TypeSelector";
+import PropertySelector from "./PropertySelector";
 
 
 export default class FilteringControls extends React.Component {
     render() {
         return (
             <div className="filtering-controls">
-                <div className="controls">
-                    <TypesSelector
-                        annotationsFilter={ this.props.annotationsFilter } />
-                </div>
+                <TypeSelector
+                    annotationsFilter={ this.props.annotationsFilter } />
+                <PropertySelector
+                    annotationsFilter={ this.props.annotationsFilter } />
             </div>
         );
     }

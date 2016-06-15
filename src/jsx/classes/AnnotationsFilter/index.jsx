@@ -27,7 +27,13 @@ export default class AnnotationsFilter {
                 if (!type_map.has(prop_type)) {
                     type_map.set(prop_type, new Set());
                 }
-                type_map.get(prop_type).add(annotation.getPropertyValue(prop_type));
+            }
+        }
+        for (let annotation of this._annotations) {
+            let type_map = result.get(annotation.type);
+            for (let prop_type of type_map.keys()) {
+                const value = annotation.getPropertyValue(prop_type);
+                type_map.get(prop_type).add(value);
             }
         }
         for (let type_map of result.values()) {
@@ -44,7 +50,7 @@ export default class AnnotationsFilter {
         }
         let base = this._type === null
             ? this._all_types
-            : this._props_index[this._type][this._property];
+            : this._props_index.get(this._type).get(this._property);
         let cnt = 0;
         this._color_index = new Map();
         for (let t of base) {
@@ -68,21 +74,18 @@ export default class AnnotationsFilter {
         return result;
     }
 
-    isTypeSelected() {
-        return this._type !== null;
+    get available_types() {
+        return this._all_types;
     }
 
-    getTypes() {
-        return this._all_types.map(type => ({
-            type: type,
-            selected: type === this._type,
-        }));
+    getSelectedType() {
+        return this._type;
     }
 
     setType(type) {
         this._type = type;
         this._property = null;
-        delete this.___available_properties; // reset cache
+        delete this.__available_properties; // reset cache
         this._makeColorIndex();
         this._callback();
     }
@@ -92,26 +95,23 @@ export default class AnnotationsFilter {
             throw new InternalError("Attempt to get properties with no type being set.");
         }
         if (typeof this.__available_properties === "undefined") {
-            let result = this._props_index.get(this._type);
-            result.sort((a, b) => {
-                if (a === null) {
-                    return -1;
-                }
-                if (b === null) {
-                    return 1;
-                }
-                return a - b;
-            });
+            let result = iterToArray(this._props_index.get(this._type).keys());
+            // result.sort((a, b) => {
+            //     if (a === null) {
+            //         return -1;
+            //     }
+            //     if (b === null) {
+            //         return 1;
+            //     }
+            //     return a - b;
+            // });
             this.__properties = result;
         }
         return this.__properties;
     }
 
-    getProperies() {
-        return this.available_properties.map(property => ({
-            prop: property,
-            enabled: !this._disabled_values.has(property),
-        }));
+    getSelectedProperty() {
+        return this._property;
     }
 
     setProperty(prop) {

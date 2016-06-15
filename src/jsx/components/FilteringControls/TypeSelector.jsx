@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default class TypesSelector extends React.Component {
+export default class TypeSelector extends React.Component {
     onChange = (e) => {
         if (e.target.value === "") {
             this.props.annotationsFilter.setType(null);
@@ -9,10 +9,12 @@ export default class TypesSelector extends React.Component {
             this.props.annotationsFilter.setType(e.target.value);
         }
     }
-    renderOption(key, caption, selected) {
+    renderOption(key, caption=null) {
+        if (caption === null) {
+            caption = key;
+        }
         return (
             <option value={ key }
-                    selected={ selected }
                     key={ key }>
                 { caption }
             </option>
@@ -22,10 +24,10 @@ export default class TypesSelector extends React.Component {
         return (
             <div className="block">
                 <label>Filter by type</label>
-                <select onChange={ this.onChange }>
-                    { this.renderOption("", "< All types >", this.props.annotationsFilter.isTypeSelected()) }
-                    { this.props.annotationsFilter.getTypes().map(info =>
-                        this.renderOption(info.type, info.type, info.selected)
+                <select onChange={ this.onChange } value={ this.props.annotationsFilter.getSelectedType() || "" }>
+                    { this.renderOption("", "< All types >") }
+                    { this.props.annotationsFilter.available_types.map(type =>
+                        this.renderOption(type)
                     )}
                 </select>
             </div>

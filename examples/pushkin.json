@@ -38,6 +38,30 @@
                 "Part": "Noun",
                 "Is proper": "Yes"
             }
+        }, {
+            "id": "5",
+            "start_pos": 33,
+            "end_pos": 35,
+            "type": "Entity",
+            "properties": {
+                "Part": "Numeric"
+            }
+        }, {
+            "id": "6",
+            "start_pos": 40,
+            "end_pos": 44,
+            "type": "Entity",
+            "properties": {
+                "Part": "Numeric"
+            }
+        }, {
+            "id": "7",
+            "start_pos": 30,
+            "end_pos": 32,
+            "type": "Entity",
+            "properties": {
+                "Part": "Preposition"
+            }
         }
     ]
 }
