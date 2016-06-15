@@ -1,0 +1,55 @@
+.document-text {
+    width: 800px;
+    margin-bottom: 100vh;
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background: #fff;
+
+    .text-chunk {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: baseline;
+        white-space: pre-wrap;
+
+        .cards {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            display: flex;
+            flex-direction: row;
+
+            .annotation-card {
+                background: white;
+                border: 2px solid black;
+                box-shadow: 0px 3px 15px -2px rgba(0,0,0,0.75);
+                margin: 0 5px;
+                padding: 0;
+                vertical-align: top;
+                width: 200px;
+
+                .type {
+                    background: black;
+                    color: white;
+                    text-align: center;
+                    font-weight: bold;
+                    margin: 0 0 5px 0;
+                    padding: 2px 5px 5px;
+                }
+
+                .properties {
+                    padding: 5px;
+
+                    table {
+                        width: 100%;
+                        th {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
