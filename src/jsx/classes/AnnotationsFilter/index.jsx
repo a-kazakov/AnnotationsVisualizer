@@ -68,6 +68,17 @@ export default class AnnotationsFilter {
         return result;
     }
 
+    isTypeSelected() {
+        return this._type !== null;
+    }
+
+    getTypes() {
+        return this._all_types.map(type => ({
+            type: type,
+            selected: type === this._type,
+        }));
+    }
+
     setType(type) {
         this._type = type;
         this._property = null;
