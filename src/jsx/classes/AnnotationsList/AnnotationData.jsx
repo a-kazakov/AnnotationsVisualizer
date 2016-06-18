@@ -4,8 +4,9 @@ import InvalidFormatError from "exceptions/InvalidFormatError";
 export default class AnnotationData {
     //  Public
 
-    constructor(source_data, parent) {
-        this._valudateInput(source_data, parent);
+    constructor(source_data, annotations_list, parent=null) {
+        this._valudateInput(source_data, annotations_list, parent);
+        this._parent = parent;
         this._id = source_data.id;
         this._start_pos = source_data.start_pos;
         this._end_pos = source_data.end_pos;
@@ -13,6 +14,9 @@ export default class AnnotationData {
         this._properties = source_data.properties;
         this._props_types = Object.keys(this._properties);
         this._props_types.sort();
+        this._children = Array.isArray(source_data.children)
+            ? source_data.children.map(child => new AnnotationData(child, annotations_list, this))
+            : [];
     }
 
     getPropertyName(key) {
@@ -46,14 +50,33 @@ export default class AnnotationData {
         return this._props_types;
     }
 
+    get parent() {
+        return this._parent;
+    }
+
+    get top_parent() {
+        if (typeof this.__top_parent === "undefined") {
+            let result = this;
+            while (result.parent !== null) {
+                result = result.parent;
+            }
+            this.__top_parent = result;
+        }
+        return this.__top_parent;
+    }
+
+    get children() {
+        return this._children;
+    }
+
     // Private
 
-    _valudateInput(source_data, parent) {
-        const MANDATORY_FILEDS = {
-            "id": x => typeof(x) === "string",
+    _valudateInput(source_data, annotations_list, parent) {
+        const FILEDS_VALIDATORS = {
+            "id": x => typeof x === "string",
             "start_pos": x => Number.isInteger(x),
             "end_pos": x => Number.isInteger(x),
-            "type": x => typeof(x) === "string",
+            "type": x => typeof x === "string",
             "properties": x => {
                 if (typeof x !== "object" || Array.isArray(x)) {
                     return false;
@@ -66,28 +89,33 @@ export default class AnnotationData {
                 return true;
             },
         }
+        const TOP_LEVEL_FIELDS = ["id", "start_pos", "end_pos", "type", "properties"];
+        const CHILDREN_FIELDS = ["id", "properties"]
         if (typeof source_data !== "object" || Array.isArray(source_data)) {
             throw new InvalidFormatError("All annotations should be objects");
         }
         if (("children" in source_data) && !Array.isArray(source_data.children)) {
             throw new InvalidFormatError(`Invalid children propery in annotation with id ${source_data.id}`);
         }
-        for (let field of Object.keys(MANDATORY_FILEDS)) {
+        const required_fields = parent === null ? TOP_LEVEL_FIELDS : CHILDREN_FIELDS;
+        for (let field of required_fields) {
             if (!(field in source_data)) {
                 throw new InvalidFormatError(`Missing ${field} field in annotation with id ${source_data.id}`);
             }
-            if (!MANDATORY_FILEDS[field](source_data[field])) {
+            if (!FILEDS_VALIDATORS[field](source_data[field])) {
                 throw new InvalidFormatError(`Failed validation for ${field} field in annotation with id ${source_data.id}`);
             }
         }
-        if (source_data.start_pos >= source_data.end_pos) {
-            throw new InvalidFormatError(`end_pos should be greater than start_pos in annotation with id ${source_data.id}`);
-        }
-        if (source_data.start_pos < 0) {
-            throw new InvalidFormatError(`end_pos should be >= 0 in annotation with id ${source_data.id}`);
-        }
-        if (source_data.end_pos > parent.document_text.length) {
-            throw new InvalidFormatError(`Annotation with id ${source_data.id} exceeds document text length`);
+        if (parent === null) {
+            if (source_data.start_pos >= source_data.end_pos) {
+                throw new InvalidFormatError(`end_pos should be greater than start_pos in annotation with id ${source_data.id}`);
+            }
+            if (source_data.start_pos < 0) {
+                throw new InvalidFormatError(`end_pos should be >= 0 in annotation with id ${source_data.id}`);
+            }
+            if (source_data.end_pos > annotations_list.document_text.length) {
+                throw new InvalidFormatError(`Annotation with id ${source_data.id} exceeds document text length`);
+            }
         }
     }
 }

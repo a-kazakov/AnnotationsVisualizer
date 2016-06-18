@@ -1,0 +1,466 @@
+{
+    "document_text": "Yuri Alekseyevich Gagarin (Russian: Ю́рий Алексе́евич Гага́рин; 9 March 1934 – 27 March 1968) was a Russian Soviet pilot and cosmonaut. He was the first human to journey into outer space, when his Vostok spacecraft completed an orbit of the Earth on 12 April 1961.",
+    "annotations": [
+        {
+            "id": "Date-1",
+            "start_pos": 64,
+            "end_pos": 76,
+            "type": "Date",
+            "properties": {
+                "Day": "9",
+                "Month": "3",
+                "Year": "1934"
+            }
+        }, {
+            "id": "Date-2",
+            "start_pos": 79,
+            "end_pos": 92,
+            "type": "Date",
+            "properties": {
+                "Day": "27",
+                "Month": "3",
+                "Year": "1968"
+            }
+        }, {
+            "id": "Date-3",
+            "start_pos": 250,
+            "end_pos": 263,
+            "type": "Date",
+            "properties": {
+                "Day": "12",
+                "Month": "4",
+                "Year": "1961"
+            }
+        }, {
+            "id": "Name-1",
+            "start_pos": 0,
+            "end_pos": 25,
+            "type": "Name",
+            "properties": {
+                "Language": "English",
+                "Person": "Yuri Gagarin"
+            }
+        }, {
+            "id": "Name-2",
+            "start_pos": 36,
+            "end_pos": 62,
+            "type": "Name",
+            "properties": {
+                "Language": "Russian",
+                "Person": "Yuri Gagarin"
+            }
+        }, {
+            "id": "POS-1",
+            "start_pos": 0,
+            "end_pos": 4,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-2",
+            "start_pos": 5,
+            "end_pos": 17,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-3",
+            "start_pos": 18,
+            "end_pos": 25,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-4",
+            "start_pos": 27,
+            "end_pos": 34,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Adjective"
+            }
+        }, {
+            "id": "POS-5",
+            "start_pos": 36,
+            "end_pos": 41,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-6",
+            "start_pos": 42,
+            "end_pos": 53,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-7",
+            "start_pos": 54,
+            "end_pos": 62,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-8",
+            "start_pos": 64,
+            "end_pos": 65,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "9"
+            }
+        }, {
+            "id": "POS-9",
+            "start_pos": 66,
+            "end_pos": 71,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-10",
+            "start_pos": 72,
+            "end_pos": 76,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "1934"
+            }
+        }, {
+            "id": "POS-11",
+            "start_pos": 79,
+            "end_pos": 81,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "27"
+            }
+        }, {
+            "id": "POS-12",
+            "start_pos": 82,
+            "end_pos": 87,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-13",
+            "start_pos": 88,
+            "end_pos": 92,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "1968"
+            }
+        }, {
+            "id": "POS-14",
+            "start_pos": 94,
+            "end_pos": 97,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Verb",
+                "Auxiliary": "Yes",
+                "Tense": "Past"
+            }
+        }, {
+            "id": "POS-15",
+            "start_pos": 98,
+            "end_pos": 99,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Article",
+                "Definite": "No"
+            }
+        }, {
+            "id": "POS-16",
+            "start_pos": 100,
+            "end_pos": 107,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Adjective"
+            }
+        }, {
+            "id": "POS-17",
+            "start_pos": 108,
+            "end_pos": 114,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Adjective"
+            }
+        }, {
+            "id": "POS-18",
+            "start_pos": 115,
+            "end_pos": 120,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-19",
+            "start_pos": 121,
+            "end_pos": 124,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Conjuction"
+            }
+        }, {
+            "id": "POS-20",
+            "start_pos": 125,
+            "end_pos": 134,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-21",
+            "start_pos": 136,
+            "end_pos": 138,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Pronoun"
+            }
+        }, {
+            "id": "POS-22",
+            "start_pos": 139,
+            "end_pos": 142,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Verb",
+                "Auxiliary": "Yes",
+                "Tense": "Past"
+            }
+        }, {
+            "id": "POS-23",
+            "start_pos": 143,
+            "end_pos": 146,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Article",
+                "Definite": "Yes"
+            }
+        }, {
+            "id": "POS-24",
+            "start_pos": 147,
+            "end_pos": 152,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "Yes",
+                "Value": "1"
+            }
+        }, {
+            "id": "POS-25",
+            "start_pos": 153,
+            "end_pos": 158,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-26",
+            "start_pos": 159,
+            "end_pos": 161,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Preposition"
+            }
+        }, {
+            "id": "POS-27",
+            "start_pos": 162,
+            "end_pos": 169,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Verb",
+                "Auxiliary": "No",
+                "Tense": "Present"
+            }
+        }, {
+            "id": "POS-28",
+            "start_pos": 170,
+            "end_pos": 174,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Preposition"
+            }
+        }, {
+            "id": "POS-29",
+            "start_pos": 175,
+            "end_pos": 180,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Adjective"
+            }
+        }, {
+            "id": "POS-30",
+            "start_pos": 181,
+            "end_pos": 186,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-31",
+            "start_pos": 188,
+            "end_pos": 192,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Conjuction"
+            }
+        }, {
+            "id": "POS-32",
+            "start_pos": 193,
+            "end_pos": 196,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Determiner"
+            }
+        }, {
+            "id": "POS-33",
+            "start_pos": 197,
+            "end_pos": 203,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-34",
+            "start_pos": 204,
+            "end_pos": 214,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-35",
+            "start_pos": 215,
+            "end_pos": 224,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Verb",
+                "Auxiliary": "No",
+                "Tense": "Past"
+            }
+        }, {
+            "id": "POS-36",
+            "start_pos": 225,
+            "end_pos": 227,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Article",
+                "Definite": "No"
+            }
+        }, {
+            "id": "POS-37",
+            "start_pos": 228,
+            "end_pos": 233,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "No",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-38",
+            "start_pos": 234,
+            "end_pos": 236,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Preposition"
+            }
+        }, {
+            "id": "POS-39",
+            "start_pos": 237,
+            "end_pos": 240,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Article",
+                "Definite": "Yes"
+            }
+        }, {
+            "id": "POS-40",
+            "start_pos": 241,
+            "end_pos": 246,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-41",
+            "start_pos": 247,
+            "end_pos": 249,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Preposition"
+            }
+        }, {
+            "id": "POS-42",
+            "start_pos": 250,
+            "end_pos": 252,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "12"
+            }
+        }, {
+            "id": "POS-43",
+            "start_pos": 253,
+            "end_pos": 258,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Noun",
+                "Proper": "Yes",
+                "Plural": "No"
+            }
+        }, {
+            "id": "POS-44",
+            "start_pos": 259,
+            "end_pos": 263,
+            "type": "Part of speech",
+            "properties": {
+                "Part of speech": "Number",
+                "Ordinal": "No",
+                "Value": "1961"
+            }
+        }
+    ]
+}

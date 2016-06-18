@@ -10,7 +10,7 @@
     .text-chunk {
         position: relative;
         cursor: pointer;
-        display: inline-block;
+        display: inline;
         vertical-align: baseline;
         white-space: pre-wrap;
 
@@ -20,6 +20,7 @@
             top: 30px;
             display: flex;
             flex-direction: row;
+            z-index: 10;
 
             .annotation-card {
                 background: white;
@@ -49,6 +50,15 @@
                         }
                     }
                 }
+
+                .child-annotation-card {
+                    width: auto;
+                    margin-left: 5px;
+                    margin-bottom: 5px;
+                    border-left: 2px solid black;
+                    border-bottom: 2px solid black;
+                }
+
             }
         }
     }

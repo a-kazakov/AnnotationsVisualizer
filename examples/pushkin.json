@@ -2,11 +2,41 @@
     "document_text": "Alexander S. Pushkin was born on 26 May 1799.",
     "annotations": [
         {
+            "id": "N1",
+            "start_pos": 0,
+            "end_pos": 20,
+            "type": "Full name",
+            "properties": {
+                "Person": "A. Pushkin"
+            },
+            "children": [
+                {
+                    "id": "c1",
+                    "type": "Last name",
+                    "properties": {
+                        "value": "Pushkin"
+                    }
+                }, {
+                    "id": "c2",
+                    "type": "First name",
+                    "properties": {
+                        "value": "Alexander"
+                    }
+                }, {
+                    "id": "c3",
+                    "type": "Middle name",
+                    "properties": {
+                        "value": "S."
+                    }
+                }
+            ]
+        },{
             "id": "1",
             "start_pos": 0,
             "end_pos": 20,
             "type": "Entity",
             "properties": {
+                "ID": "1",
                 "Part": "Noun",
                 "Is proper": "Yes"
             }
@@ -16,8 +46,10 @@
             "end_pos": 29,
             "type": "Entity",
             "properties": {
+                "ID": "2",
                 "Part": "Verb",
-                "Tense": "Past"
+                "Tense": "Past",
+                "Subject": "[1] Alexander S. Pushkin"
             }
         }, {
             "id": "3",

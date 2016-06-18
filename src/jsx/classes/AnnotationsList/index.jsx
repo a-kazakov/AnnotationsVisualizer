@@ -52,14 +52,21 @@ export default class AnnotationsList {
         }
     }
 
+    _addAnnotationToIdIndex(annotation) {
+        const id = annotation.id;
+        if (this._id_index.has(id)) {
+            throw new InvalidFormatError(`Duplicated ID: ${id}`);
+        }
+        this._id_index.set(id, annotation);
+        for (let child of annotation.children) {
+            this._addAnnotationToIdIndex(child);
+        }
+    }
+
     _buildIdIndex() {
         this._id_index = new Map();
         for (let annotation of this._annotations) {
-            const id = annotation.id;
-            if (this._id_index.has(id)) {
-                throw new InvalidFormatError(`Duplicated ID: ${id}`);
-            }
-            this._id_index.set(id, annotation);
+            this._addAnnotationToIdIndex(annotation);
         }
     }
 
